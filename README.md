@@ -337,4 +337,4 @@ An SVM model with an RBF kernel was trained.
 ### 2. Order Priority Prediction
 
 - The SVM model with optimized parameters performed best in balancing bias and variance, achieving the highest test accuracy and F1 score among the models tested.
-<img src="">
+
