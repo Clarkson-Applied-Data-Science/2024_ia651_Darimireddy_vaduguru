@@ -338,3 +338,14 @@ An SVM model with an RBF kernel was trained.
 
 - The SVM model with optimized parameters performed best in balancing bias and variance, achieving the highest test accuracy and F1 score among the models tested.
 
+<<image src="1.png">>
+<<image src="2.png">>
+<<image src="3.png">>
+<<image src="4.png">>
+<<image src="5.png">>
+<<image src="6.png">>
+<<image src="7.png">>
+<<image src="8.png">>
+<<image src="9.png">>
+<<image src="10.png">>
+<<image src="11.png">>
