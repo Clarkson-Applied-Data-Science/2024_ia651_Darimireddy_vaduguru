@@ -99,8 +99,9 @@ Standardization was applied using `StandardScaler` to ensure features are on the
 
 ### 1. Region-Based Linear Regression
 
+Cumulative data up until that day were considered for the model 
 Profit prediction models were built separately for each region:
-
+Model predictions on the training data:
 - **East Region**
   - **MSE:** 0.0985
   - **R^2 Score:** 0.8394
@@ -155,6 +156,7 @@ Profit prediction models were built separately for each region:
   - **Data Points:** 465
 
 
+Model predictions on the testing data:
 
 - **East Region**
   - **MSE:** 0.2015
@@ -200,21 +202,91 @@ Profit prediction models were built separately for each region:
 
 
 ### 2. Testing the Model
-
+The data of only the previous day were considered for building the model
 Test set performance was consistent with training:
 
-- **Central Region (Testing Set):**
-  - **MSE:** 0.0038
-  - **R^2 Score:** 0.83
-- **East Region (Testing Set):**
-  - **MSE:** 0.0045
-  - **R^2 Score:** 0.79
-- **West Region (Testing Set):**
-  - **MSE:** 0.0041
-  - **R^2 Score:** 0.82
-- **South Region (Testing Set):**
-  - **MSE:** 0.0053
-  - **R^2 Score:** 0.75
+
+- **East Region**
+  - **MSE:** 0.578
+  - **R^2 Score:** 0.0621
+- **Oceania Region:**
+  - **MSE:** 0.5592
+  - **R^2 Score:** 0.0372
+- **Africa Region:**
+  - **MSE:** 0.4354
+  - **R^2 Score:** 0.061
+- **West Region:**
+  - **MSE:** 0.3882
+  - **R^2 Score:** 0.0452
+- **South Region:**
+  - **MSE:** 0.4146
+  - **R^2 Score:** 0.0209
+- **Central Asia Region:**
+  - **MSE:** 0.5471
+  - **R^2 Score:** 0.048 
+- **EMEA Region:**
+  - **MSE:** 0.471
+  - **R^2 Score:** 0.0415
+- **North Asia Region:**
+  - **MSE:** 0.6007
+  - **R^2 Score:** 0.050
+- **Central Region:**
+  - **MSE:** 0.3344
+  - **R^2 Score:** 0.0247
+- **North Region:**
+  - **MSE:** 0.4611
+  - **R^2 Score:** 0.033
+- **Canada Region:**
+  - **MSE:** 9.48563070798958e-30
+  - **R^2 Score:** 1.0
+- **Southeast Asia Region:**
+  - **MSE:** 0.857
+  - **R^2 Score:** 0.0613
+- **Caribbean Region:**
+  - **MSE:** 1.136
+  - **R^2 Score:** -0.7006
+
+
+- **East Region**
+  - **MSE:** 1.493
+  - **R^2 Score:** -0.6874
+- **Oceania Region:**
+  - **MSE:** 1.2421
+  - **R^2 Score:** -0.7053
+- **Africa Region:**
+  - **MSE:** 1.8289
+  - **R^2 Score:** -1.1398
+- **West Region:**
+  - **MSE:** 1.2065
+  - **R^2 Score:** -0.9846
+- **South Region:**
+  - **MSE:** 1.2871
+  - **R^2 Score:** -0.9764
+- **Central Asia Region:**
+  - **MSE:** 1.5318
+  - **R^2 Score:** -0.4252 
+- **EMEA Region:**
+  - **MSE:** 1.2069
+  - **R^2 Score:** -0.7217
+- **North Asia Region:**
+  - **MSE:** 2.030
+  - **R^2 Score:** -1.737
+- **Central Region:**
+  - **MSE:** 1.4704
+  - **R^2 Score:** -1.3752
+- **North Region:**
+  - **MSE:**  1.5409
+  - **R^2 Score:** -1.0061
+- **Canada Region:**
+  - **MSE:** 1.4112
+  - **R^2 Score:** 0.0755
+- **Southeast Asia Region:**
+  - **MSE:** 1.1205
+  - **R^2 Score:** -0.3299
+- **Caribbean Region:**
+  - **MSE:** 1.1673
+  - **R^2 Score:** -0.4571
+
 
 ## Predictive Modeling: Order Priority Prediction
 
@@ -222,40 +294,39 @@ Test set performance was consistent with training:
 
 Logistic regression was used to predict `Order Priority`.
 
-- **Training Accuracy:** 0.73
+- **Training Accuracy:** 0.7299
 - **Training F1 Score (Macro Average):** 0.51
-- **Testing Accuracy:** 0.73
+- **Testing Accuracy:** 0.7337
 - **Testing F1 Score (Macro Average):** 0.50
 
 ### 2. Decision Tree Classifier
 
 A decision tree classifier was used to predict `Order Priority`.
 
-- **Training Accuracy:** 0.95
-- **Training F1 Score (Macro Average):** 0.93
-- **Testing Accuracy:** 0.55
-- **Testing F1 Score (Macro Average):** 0.48
+- **Testing Accuracy:** 0.5992
+- **Testing F1 Score (Macro Average):** 0.43
 
 ### 3. Random Forest Classifier
 
 A random forest classifier was trained to improve performance.
 
-- **Training Accuracy:** 0.95
-- **Training F1 Score (Macro Average):** 0.92
-- **Testing Accuracy:** 0.59
-- **Testing F1 Score (Macro Average):** 0.52
+- **Training Accuracy:** 1.0
+- **Training F1 Score (Macro Average):** 1.0
+- **Testing Accuracy:** 0.69
+- **Testing F1 Score (Macro Average):** 0.43
 
 ### 4. Support Vector Machine (SVM)
 
 An SVM model with an RBF kernel was trained.
 
 - **Best Parameters (GridSearchCV):**
+  - **Best Score:** 0.4463
   - **C:** 100
   - **gamma:** 1
-- **Training Accuracy:** 0.62
-- **Training F1 Score (Macro Average):** 0.57
-- **Testing Accuracy:** 0.60
-- **Testing F1 Score (Macro Average):** 0.55
+- **Training Accuracy:** 0.99
+- **Training F1 Score (Macro Average):** 0.99
+- **Testing Accuracy:** 0.585
+- **Testing F1 Score (Macro Average):** 0.36
 
 ## Conclusion
 
@@ -266,4 +337,4 @@ An SVM model with an RBF kernel was trained.
 ### 2. Order Priority Prediction
 
 - The SVM model with optimized parameters performed best in balancing bias and variance, achieving the highest test accuracy and F1 score among the models tested.
-
+<img src="">
